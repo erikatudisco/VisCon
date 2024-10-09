@@ -113,7 +113,7 @@ class MainWindow(QMainWindow):
         self.XnrEdit.setText(str(self.inputData.Xnr))
         self.YnrEdit.setText(str(self.inputData.Ynr))
         
-        self.meshSlider.setValue(self.inputData.elSizenr)
+        self.meshSlider.setValue(int(self.inputData.elSizenr))
         self.meshLabel.setText(str(self.inputData.elSize))
         
         #Uppdatera tabellvärden
@@ -410,7 +410,7 @@ class MainWindow(QMainWindow):
         if self.inputData.comboindex == 0:
             Xnr = self.inputData.Xnr
             self.localSlider.setMinimum(0)
-            self.localSlider.setMaximum(Xnr-1)
+            self.localSlider.setMaximum(int(Xnr-1))
             self.localSlider.setValue(0)
             self.localSlider.setTickPosition(QSlider.TicksBelow)
             self.localSlider.setTickInterval(1)
@@ -420,7 +420,7 @@ class MainWindow(QMainWindow):
         else:
             Ynr = self.inputData.Ynr
             self.localSlider.setMinimum(0)
-            self.localSlider.setMaximum(Ynr-1)
+            self.localSlider.setMaximum(int(Ynr-1))
             self.localSlider.setValue(0)
             self.localSlider.setTickPosition(QSlider.TicksBelow)
             self.localSlider.setTickInterval(1)
@@ -533,7 +533,7 @@ class MainWindow(QMainWindow):
          if self.inputData.comboindex == 0:
              Xnr = self.inputData.Xnr
              self.localSlider.setMinimum(0)
-             self.localSlider.setMaximum(Xnr-1)
+             self.localSlider.setMaximum(int(Xnr-1))
              self.localSlider.setValue(0)
              self.localSlider.setTickPosition(QSlider.TicksBelow)
              self.localSlider.setTickInterval(1)
@@ -543,7 +543,7 @@ class MainWindow(QMainWindow):
          else:
              Ynr = self.inputData.Ynr
              self.localSlider.setMinimum(0)
-             self.localSlider.setMaximum(Ynr-1)
+             self.localSlider.setMaximum(int(Ynr-1))
              self.localSlider.setValue(0)
              self.localSlider.setTickPosition(QSlider.TicksBelow)
              self.localSlider.setTickInterval(1)
