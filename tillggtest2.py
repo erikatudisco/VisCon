@@ -108,8 +108,8 @@ def step(K, C, a, bc, bcval, dt, T, Tnr):
     Tvec = np.arange(ndt, n, ndt)
     Tvec = np.append(Tvec, n)
 
-    #theta = 1
-    theta = 0
+    theta = 1
+    # theta = 0.5
     avec = a
     
     Kt = K
@@ -119,8 +119,8 @@ def step(K, C, a, bc, bcval, dt, T, Tnr):
 
     for i in range (n):
 
-        Kt = Ct + dt*Kt
-        f=(Ct+(1-theta)*Kt)*a
+        Kt = Ct + dt*Kt*theta
+        f=(Ct-(1-theta)*Kt)*a
         a, r = cfc.solveq(Kt, f, bc)
         if (i+1) in Tvec:
             avec=np.hstack((avec, a))
